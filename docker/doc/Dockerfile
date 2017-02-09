@@ -1,10 +1,6 @@
-FROM alpine
+FROM ruby:2.3.3
 
-RUN apk update && apk upgrade && apk --update add \
-    ruby ruby-irb ruby-rake ruby-io-console ruby-bigdecimal ruby-json ruby-bundler \
-    libstdc++ tzdata bash ca-certificates \
-    git \
-    &&  echo 'gem: --no-document' > /etc/gemrc
+RUN apt-get update && gem install bundler
 
 RUN git clone https://github.com/rstoke/live-doc.git
 
