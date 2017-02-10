@@ -1,7 +1,6 @@
-FROM ubuntu:wily
-MAINTAINER "Pedro Cesar" <pedrocesar.ti@gmail.com>
+FROM ubuntu:16.04
+MAINTAINER "Maxime Alardo" <maxime@alardo.io>
 EXPOSE 4567
-
 
 # INSTALL BASE TOOLS
 RUN apt-get update
@@ -20,3 +19,11 @@ ENV CONFIGURE_OPTS --disable-install-doc
 RUN rbenv install 2.1.0
 RUN rbenv global 2.1.0
 RUN gem install --no-ri --no-rdoc bundler
+
+# FETCH DOCUMENTATION
+
+WORKDIR /root/
+RUN git clone https://github.com/rstoke/live-doc.git
+
+WORKDIR /root/live-doc
+RUN bundle install && bundle exec middleman server
