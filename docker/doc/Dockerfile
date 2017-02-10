@@ -25,5 +25,5 @@ RUN gem install --no-ri --no-rdoc bundler
 WORKDIR /root/
 RUN git clone https://github.com/rstoke/live-doc.git
 
-WORKDIR /root/live-doc
+WORKDIR /root/live-doc/slate
 RUN bundle install && bundle exec middleman server
