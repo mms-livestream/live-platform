@@ -1,7 +1,0 @@
-        location /doc/ {
-            resolver 8.8.8.8 valid=300s;
-            resolver_timeout 10s;
-            proxy_pass http://mmskit.tk:4567;
-            # note this slash  -----------^
-            proxy_set_header Host $host;
-        }  
