@@ -26,3 +26,5 @@ RUN git clone https://github.com/rstoke/live-doc.git
 
 WORKDIR /root/live-doc/slate
 RUN bundle install
+
+CMD ["bundle", "exec", "middleman", "server"]
