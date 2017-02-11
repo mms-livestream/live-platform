@@ -21,9 +21,8 @@ RUN rbenv global 2.1.0
 RUN gem install --no-ri --no-rdoc bundler
 
 # FETCH DOCUMENTATION
-
 WORKDIR /root/
 RUN git clone https://github.com/rstoke/live-doc.git
 
 WORKDIR /root/live-doc/slate
-RUN bundle install && bundle exec middleman server
+RUN bundle install
