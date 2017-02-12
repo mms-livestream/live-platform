@@ -28,4 +28,4 @@ RUN chmod +x autopull.sh && ./autopull.sh
 WORKDIR /root/live-doc/slate
 RUN bundle install
 
-CMD ["bundle", "exec", "middleman", "server"]
+CMD ["bundle", "exec", "middleman", "server", "--reload-paths", "source/"]
