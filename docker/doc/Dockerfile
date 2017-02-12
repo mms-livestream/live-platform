@@ -23,6 +23,7 @@ RUN gem install --no-ri --no-rdoc bundler
 # FETCH DOCUMENTATION
 WORKDIR /root/
 RUN git clone https://github.com/rstoke/live-doc.git
+RUN chmod +x autopull.sh && ./autopull.sh
 
 WORKDIR /root/live-doc/slate
 RUN bundle install
