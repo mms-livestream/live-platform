@@ -22,10 +22,10 @@ RUN gem install --no-ri --no-rdoc bundler
 
 # FETCH DOCUMENTATION
 WORKDIR /root/
-RUN git clone https://github.com/rstoke/live-doc.git
-RUN chmod +x live-doc/autopull.sh && ./live-doc/autopull.sh
+RUN git clone https://github.com/mms-livestream/doc
+RUN chmod +x doc/autopull.sh && ./doc/autopull.sh
 
-WORKDIR /root/live-doc/slate
+WORKDIR /root/doc/slate
 RUN bundle install
 
 CMD ["bundle", "exec", "middleman", "server", "--reload-paths", "source/"]
