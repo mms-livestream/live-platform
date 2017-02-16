@@ -70,4 +70,4 @@ ENTRYPOINT ["/bin/tini", "--", "/usr/local/bin/jenkins.sh"]
 COPY plugins.sh /usr/local/bin/plugins.sh
 COPY install-plugins.sh /usr/local/bin/install-plugins.sh
 
-CMD ["jenkins", "--prefix=/jenkins/"]
+#CMD ["jenkins", "--prefix=/jenkins/"]
